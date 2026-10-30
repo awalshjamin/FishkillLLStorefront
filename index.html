@@ -360,6 +360,11 @@ html, body { width: 100%; max-width: 100%; }
   .products, .two { grid-template-columns: minmax(0, 1fr); }
   .panel { padding: 15px; }
 }
+/* Seasonal ordering announcement */
+.deadline-banner{background:#fff4d9;border:2px solid #dba73b;border-radius:12px;padding:18px 20px;margin-bottom:18px;text-align:center}
+.deadline-banner .deadline-label{font-weight:850;font-size:clamp(20px,3.5vw,27px);color:#713e05;line-height:1.25}
+.deadline-banner .holiday-message{font-weight:700;font-size:16px;color:#234969;margin-top:8px}
+.deadline-banner .deadline-detail{font-size:13px;color:#65512d;margin-top:7px}
 </style>
  </head>
  <body>
@@ -374,6 +379,11 @@ html, body { width: 100%; max-width: 100%; }
    </div>
   </header>
   <div class="wrap">
+   <div class="deadline-banner" role="status" aria-label="Spirit wear ordering deadline">
+    <div class="deadline-label">Orders Close November 8!</div>
+    <div class="holiday-message">Order now — spirit wear will arrive in time for the holidays!</div>
+    <div class="deadline-detail">Get your Fishkill Little League gifts and gear ordered before the deadline.</div>
+   </div>
    <div class="notice">
     <strong>
      Order now, pay in person.
@@ -670,9 +680,29 @@ function validate(){
 function receipt(o){return `FISHKILL LITTLE LEAGUE — SPIRIT WEAR ORDER\nDate: ${new Date(o.createdAt).toLocaleString()}\nName: ${o.customer.name}\nEmail: ${o.customer.email}\nPhone: ${o.customer.phone}\nTeam: ${o.customer.team||'—'}\n\n${o.items.map((l,i)=>`${i+1}. ${l.product} · ${l.color} · ${l.size} · ${l.design}\n   Quantity: ${l.qty}${l.backName?' · Back name: '+l.backName:''}\n   Line total: ${money(l.lineTotal)}`).join('\n')}\n\nApparel: ${money(o.subtotal)}\nSize upcharges: ${money(o.sizeExtras)}\nPersonalization: ${money(o.personalization)}\nTOTAL DUE: ${money(o.total)}\n\nPayment: Cash only\nPickup only; no shipping\nNotes: ${o.customer.notes||'—'}`}
 // Replace this URL with the deployed Cloudflare Worker URL (no trailing slash).
 const ORDER_API_URL = 'https://fishkill-spiritwear-api.amanda-jamin.workers.dev';
+// Ordering closes at 12:00 AM Eastern on November 9, 2026.
+const ORDER_CLOSE_AT = Date.parse('2026-11-09T00:00:00-05:00');
+function ordersAreClosed() { return Date.now() >= ORDER_CLOSE_AT; }
+function updateOrderDeadline() {
+  const closed = ordersAreClosed();
+  const submit = document.getElementById('submitBtn');
+  if (submit) {
+    submit.disabled = closed || submissionPending;
+    if (closed) submit.textContent = 'Ordering closed';
+  }
+  const banner = document.querySelector('.deadline-banner');
+  if (closed && banner) {
+    banner.querySelector('.deadline-label').textContent = 'Ordering is now closed';
+    banner.querySelector('.holiday-message').textContent = 'Thank you for supporting Fishkill Little League!';
+    banner.querySelector('.deadline-detail').textContent = 'The November 8 ordering deadline has passed.';
+  }
+  const status = document.getElementById('submitStatus');
+  if (closed && status) status.textContent = 'Orders closed at midnight Eastern on November 9, 2026. New orders are no longer accepted.';
+}
 let submissionPending = false;
 let pendingOrder = null;
 $('submitBtn').onclick = async () => {
+ if (ordersAreClosed()) { updateOrderDeadline(); return; }
  if (submissionPending || !validate()) return;
  if (ORDER_API_URL.includes('REPLACE-ME')) {
    $('submitStatus').textContent = 'Store is not yet configured. Please contact the league.';
@@ -722,7 +752,7 @@ const originalRenderCart = renderCart;
 renderCart = function() { clearPendingOrder(); originalRenderCart(); };
 
 $('copyOrderId').onclick = () => { const id=$('successId').textContent; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(id).catch(() => window.prompt('Copy confirmation number:', id)); else window.prompt('Copy confirmation number:', id); };
-renderProducts();renderCart();
+renderProducts();renderCart();updateOrderDeadline();setInterval(updateOrderDeadline, 15000);
   </script>
  </body>
 </html>
