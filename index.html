@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Fishkill Little League | Spirit Wear Order
+  </title>
+  <style>
+   :root {
+  --navy:#112b49;
+  --blue:#225b85;
+  --bg:#f3f6fa;
+  --ink:#17283b;
+  --muted:#64748b;
+  --border:#d8e0e8}
+* {
+  box-sizing:border-box}
+body {
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg)}
+header {
+  background:var(--navy);
+  color:white;
+  padding:32px 18px}
+header .wrap {
+  max-width:1040px;
+  margin:auto}
+header h1 {
+  margin:0;
+  font-size:clamp(24px,4vw,36px)}
+header p {
+  margin:8px 0 0;
+  color:#d7e6f3}
+.wrap {
+  max-width:1040px;
+  margin:0 auto;
+  padding:22px 16px}
+.notice {
+  padding:15px 18px;
+  background:#eaf2fb;
+  border-left:4px solid var(--blue);
+  border-radius:8px;
+  margin-bottom:20px}
+.grid {
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:22px}
+.panel {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:0 2px 12px #102b4510}
+h2 {
+  font-size:21px;
+  margin:0 0 14px}
+h3 {
+  margin:0 0 10px;
+  font-size:17px}
+label {
+  font-size:14px;
+  font-weight:650;
+  display:block;
+  margin:10px 0 5px}
+input,select,textarea {
+  font:inherit;
+  width:100%;
+  padding:11px;
+  border:1px solid #bdcbd9;
+  border-radius:8px;
+  background:white;
+  color:var(--ink)}
+input:focus,select:focus,textarea:focus {
+  outline:2px solid #80b9e5;
+  outline-offset:1px}
+.two {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px}
+.products {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px}
+.product {
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden}
+.photo {
+  height:118px;
+  background:linear-gradient(130deg,#e7ecf2,#d4e3ef);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#61738a;
+  font-size:13px;
+  text-align:center;
+  padding:10px}
+.product-body {
+  padding:12px}
+.product h3 {
+  margin:0 0 5px}
+.product p {
+  margin:0 0 12px;
+  color:var(--muted);
+  font-size:13px}
+.product button,button {
+  cursor:pointer;
+  border:0;
+  border-radius:8px;
+  background:var(--blue);
+  color:white;
+  font:inherit;
+  font-weight:700;
+  padding:11px 14px}
+.product button {
+  width:100%}
+button:hover {
+  filter:brightness(.93)}
+button:disabled {
+  opacity:.55;
+  cursor:not-allowed}
+.secondary {
+  background:#e7eef5;
+  color:var(--navy)}
+.danger {
+  background:#fff0f0;
+  color:#a12b2b}
+.small {
+  font-size:12px;
+  color:var(--muted)}
+.line {
+  padding:12px 0;
+  border-bottom:1px solid var(--border)}
+.line-top {
+  display:flex;
+  justify-content:space-between;
+  gap:8px}
+.line strong {
+  font-size:14px}
+.line p {
+  font-size:13px;
+  color:var(--muted);
+  margin:4px 0}
+.line button {
+  font-size:12px;
+  padding:6px 8px}
+.summary-row {
+  display:flex;
+  justify-content:space-between;
+  padding:9px 0}
+.total {
+  border-top:2px solid var(--navy);
+  font-size:23px;
+  font-weight:800;
+  margin-top:10px}
+.stack {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap}
+.stack button {
+  flex:1}
+.empty {
+  color:var(--muted);
+  font-size:14px}
+.pill {
+  display:inline-block;
+  background:#eaf2fb;
+  color:#174c73;
+  padding:5px 9px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700}
+.pending {
+  background:#f9f2df;
+  color:#6e5318}
+.modal {
+  position:fixed;
+  inset:0;
+  background:#0c1a2caa;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  z-index:20}
+.modal.open {
+  display:flex}
+.dialog {
+  width:min(100%,540px);
+  max-height:94vh;
+  overflow:auto;
+  background:white;
+  padding:22px;
+  border-radius:14px}
+.dialog h2 {
+  margin-bottom:6px}
+.hide {
+  display:none}
+.check {
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  font-size:14px;
+  font-weight:400}
+.check input {
+  width:auto;
+  margin-top:4px}
+.footer {
+  color:var(--muted);
+  font-size:12px;
+  padding-bottom:24px}
+.design-preview {
+  flex-wrap:wrap}
+.design-preview {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:10px 0 16px;
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  background:#f4f6fa}
+.design-preview p {
+  font-size:12px;
+  color:var(--muted);
+  margin:0}
+#orderSuccess {display:none;margin-top:18px;padding:22px;border:1px solid #bad8c7;border-radius:12px;background:#f4faf6;color:#173e2d;overflow-wrap:anywhere}
+#orderSuccess h3 {margin:0 0 8px;font-size:21px}
+#orderSuccess p {margin:8px 0;line-height:1.5}
+#orderSuccess .confirmation-id {font-weight:700;font-size:16px;letter-spacing:.02em}
+#orderSuccess .due {font-size:22px;font-weight:750}
+#confirmation {
+  white-space:pre-wrap;
+  font-size:13px;
+  background:#f3f6fa;
+  padding:14px;
+  border-radius:8px;
+  max-height:260px;
+  overflow:auto}
+.catalog-image  {
+   display: block;
+   width: 100%;
+   height: auto;
+   border-radius: 12px;
+   border: 1px solid var(--border);
+   margin-bottom: 20px;
+   }
+.catalog-note  {
+   margin: 0 0 16px;
+   font-size: 13px;
+   color: var(--muted);
+   }
+.product-swatch  {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 7px;
+   padding: 14px;
+   min-height: 76px;
+   background: #f4f6f9;
+   }
+.swatch  {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   font-size: 12px;
+   font-weight: 600;
+   }
+.swatch::before  {
+   content: "";
+   display: inline-block;
+   width: 23px;
+   height: 23px;
+   border: 1px solid #aebac8;
+   border-radius: 50%;
+   background: var(--swatch-color);
+   }
+.design-preview  {
+   display: block;
+   }
+.design-preview strong  {
+   color: var(--navy);
+   }
+@media (max-width: 800px)  {
+   .grid  {
+   grid-template-columns: 1fr;
+   }
+ }
+@media (max-width: 450px)  {
+   .products, .two  {
+   grid-template-columns: 1fr;
+   }
+ }
+
+/* Responsive layout: phone, tablet, and desktop */
+html { -webkit-text-size-adjust: 100%; }
+body { min-width: 0; overflow-x: hidden; }
+.wrap, .grid, .grid > *, .panel, .product, .dialog { min-width: 0; }
+.wrap { width: 100%; max-width: 1200px; padding-inline: clamp(12px, 2.4vw, 26px); }
+header .wrap { max-width: 1200px; }
+.grid { grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); align-items: start; }
+.grid main, .grid aside { min-width: 0; }
+.products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.catalog-image, img { max-width: 100%; height: auto; }
+input, select, textarea { max-width: 100%; min-width: 0; font-size: 16px; }
+button { max-width: 100%; min-height: 42px; }
+.line-top, .summary-row { min-width: 0; }
+.line-top > *, .summary-row > * { min-width: 0; overflow-wrap: anywhere; }
+.dialog { max-width: min(540px, 100%); max-height: min(92dvh, 850px); overscroll-behavior: contain; }
+@media (min-width: 1500px) {
+  .wrap, header .wrap { max-width: 1320px; }
+  .grid { grid-template-columns: minmax(0, 1fr) 360px; }
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .grid aside { width: 100%; }
+  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  header { padding: 18px 0; }
+  header h1 { font-size: clamp(23px, 6vw, 30px); }
+  .wrap { padding: 14px 12px; }
+  .grid { gap: 12px; }
+  .panel { padding: 15px 13px; margin-bottom: 12px; border-radius: 11px; }
+  .notice { padding: 12px 13px; margin-bottom: 12px; }
+  h2 { font-size: 19px; }
+  .products { gap: 10px; }
+  .product-body { padding: 10px; }
+  .product h3 { font-size: 15px; }
+  .product button { padding: 10px 7px; }
+  .photo { height: 100px; }
+  .modal { padding: 10px; align-items: center; }
+  .dialog { padding: 17px 14px; max-height: 94dvh; }
+}
+@media (max-width: 420px) {
+  .products, .two { grid-template-columns: minmax(0, 1fr); }
+  .photo { height: 90px; }
+  .stack { flex-direction: column; }
+  .stack button { width: 100%; }
+}
+  
+/* Comfortable reading width on desktop; fluid layout on tablets and phones. */
+html, body { width: 100%; max-width: 100%; }
+.wrap, header .wrap { width: min(100%, 960px); max-width: 960px; margin-inline: auto; }
+.grid { grid-template-columns: minmax(0, 1fr) minmax(260px, 300px); gap: 18px; }
+@media (min-width: 1500px) {
+  .wrap, header .wrap { max-width: 960px; }
+  .grid { grid-template-columns: minmax(0, 1fr) 300px; }
+}
+@media (max-width: 850px) {
+  .wrap, header .wrap { max-width: 720px; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .wrap, header .wrap { padding-inline: 14px; }
+  .products, .two { grid-template-columns: minmax(0, 1fr); }
+  .panel { padding: 15px; }
+}
+</style>
+ </head>
+ <body>
+  <header>
+   <div class="wrap">
+    <h1>
+     Fishkill Little League
+    </h1>
+    <p>
+     Spirit Wear Fundraiser · Order Form
+    </p>
+   </div>
+  </header>
+  <div class="wrap">
+   <div class="notice">
+    <strong>
+     Order now, pay in person.
+    </strong>
+    No online payments or shipping. Pay by
+    <strong>
+     cash only
+    </strong>
+    . Pickup details will be shared by the league.
+    <span class="small">
+     This form does not collect payment information.
+    </span>
+   </div>
+   <div class="grid">
+    <main>
+     <section class="panel catalog">
+      <h2>
+       1. Choose your apparel
+      </h2>
+      <img alt="Fishkill Little League spirit wear catalog showing sand and Carolina Blue sweatshirts, navy and dark gray T-shirts, and navy joggers, with prices and design options." class="catalog-image" src="catalog.jpg"/>
+      <p class="catalog-note">
+       Sweatshirts: $25 · T-shirts: $15 · Youth joggers: $30 · Adult joggers: $35. Tops: Plate Logo or Arch Logo. Joggers: Vertical Fishkill Logo only. Adult 2XL and 3XL surcharges apply to eligible apparel; optional back name +$5 (12 characters maximum).
+      </p>
+      <p class="small">
+       Select a style to add it to your order. Add multiple items, sizes, or personalized names separately.
+      </p>
+      <div class="products" id="products">
+      </div>
+     </section>
+     <section class="panel customer-panel">
+      <h2>
+       2. Your contact information
+      </h2>
+      <div class="two">
+       <div>
+        <label for="name">
+         Parent / customer name *
+        </label>
+        <input autocomplete="name" id="name" maxlength="100" minlength="2" required=""/>
+       </div>
+       <div>
+        <label for="email">
+         Email *
+        </label>
+        <input autocomplete="email" id="email" maxlength="254" required="" type="email"/>
+       </div>
+      </div>
+      <div class="two">
+       <div>
+        <label for="phone">
+         Phone *
+        </label>
+        <input autocomplete="tel" id="phone" inputmode="tel" maxlength="25" required="" type="tel"/>
+       </div>
+       <div>
+        <label for="team">
+         Team / division (optional)
+        </label>
+        <input id="team" maxlength="100" placeholder="e.g., Minors"/>
+       </div>
+      </div>
+      <label for="notes">
+       Notes (optional)
+      </label>
+      <textarea id="notes" maxlength="1000" placeholder="Anything we should know?" rows="2"></textarea>
+      <label class="check">
+       <input id="agree" type="checkbox"/>
+       <span>
+        I understand payment is due in person by cash only, and orders are for local pickup only. *
+       </span>
+      </label>
+     </section>
+     <section class="panel action-buttons">
+      <h2>
+       3. Submit your order
+      </h2>
+      <p class="small" id="submitStatus">
+       Orders submit directly to Fishkill Little League. Payment is collected in person by cash only; no shipping.
+      </p>
+      <div class="stack">
+       <button id="submitBtn" type="button">
+        Submit order
+       </button>
+      </div>
+      <div id="orderSuccess" role="status" aria-live="polite" tabindex="-1">
+       <h3>Order received!</h3>
+       <p>Thank you for supporting Fishkill Little League.</p>
+       <p>Confirmation number: <span class="confirmation-id" id="successId"></span></p>
+       <p class="due">Total due: <span id="successTotal"></span></p>
+       <p>Pay in person by cash only. Local pickup only.</p>
+       <p id="successEmail"></p>
+       <button type="button" id="copyOrderId">Copy confirmation number</button>
+      </div>
+      <p class="small">
+       Your order is recorded when you submit it. A confirmation email will be attempted using the address provided.
+      </p>
+     </section>
+    </main>
+    <aside>
+     <section class="panel">
+      <h2>
+       Your order
+       <span class="pill" id="count">
+        0 items
+       </span>
+      </h2>
+      <div class="empty" id="lines">
+       No items added yet.
+      </div>
+      <div class="summary-row">
+       <span>
+        Apparel subtotal
+       </span>
+       <strong id="subtotal">
+        $0.00
+       </strong>
+      </div>
+      <div class="summary-row">
+       <span>
+        Size upcharges
+       </span>
+       <strong id="sizeExtras">
+        $0.00
+       </strong>
+      </div>
+      <div class="summary-row">
+       <span>
+        Personalization
+       </span>
+       <strong id="personalization">
+        $0.00
+       </strong>
+      </div>
+      <div class="summary-row total">
+       <span>
+        Total due
+       </span>
+       <span id="total">
+        $0.00
+       </span>
+      </div>
+      <p class="small">
+       Due at in-person payment. No shipping.
+      </p>
+     </section>
+    </aside>
+   </div>
+   <p class="footer">
+    Fishkill Little League fundraiser · Navy joggers are available in youth and adult sizes. Optional back-name personalization costs $5 per garment (12 characters maximum). Adult 2XL and 3XL size surcharges apply to sweatshirts, T-shirts, and adult joggers.
+   </p>
+  </div>
+  <div aria-labelledby="dialogTitle" aria-modal="true" class="modal" id="modal" role="dialog">
+   <div class="dialog">
+    <div class="line-top">
+     <h2 id="dialogTitle">
+      Add item
+     </h2>
+     <button aria-label="Close" class="secondary" id="closeBtn" type="button">
+      ✕
+     </button>
+    </div>
+    <p class="small" id="dialogPrice">
+    </p>
+    <label for="color">
+     Color *
+    </label>
+    <select id="color">
+    </select>
+    <label for="design">
+     Design *
+    </label>
+    <select id="design">
+    </select>
+    <div class="design-preview" id="designPreview">
+    </div>
+    <div class="two">
+     <div>
+      <label for="size">
+       Size *
+      </label>
+      <select id="size">
+      </select>
+     </div>
+     <div>
+      <label for="qty">
+       Quantity *
+      </label>
+      <input id="qty" max="100" min="1" type="number" value="1"/>
+     </div>
+    </div>
+    <label class="check">
+     <input id="personalize" type="checkbox"/>
+     <span>
+      Add a name to the back (+$5 per item)
+     </span>
+    </label>
+    <div class="hide" id="personalizationFields">
+     <label for="backName">
+      Name exactly as it should appear *
+     </label>
+     <input id="backName" maxlength="12" placeholder="e.g., OWEN"/>
+     <p class="small">
+      Maximum 12 characters. For different names or sizes, add each variation as a separate line item.
+     </p>
+    </div>
+    <p class="small" id="linePrice">
+    </p>
+    <div class="stack">
+     <button id="addBtn" type="button">
+      Add to order
+     </button>
+     <button class="secondary" id="cancelBtn" type="button">
+      Cancel
+     </button>
+    </div>
+   </div>
+  </div>
+  <script>
+   'use strict';
+/* Submit orders through the container-bound Google Apps Script backend (Code.gs). */
+// Hosted on GitHub Pages; submitted via Cloudflare Worker.
+const PRODUCTS = [
+ {id:'hoodie',title:'Hooded Sweatshirt',price:25,colors:['Sand','Carolina Blue'],sizes:['Youth S','Youth M','Youth L','Youth XL','Adult S','Adult M','Adult L','Adult XL','Adult 2XL','Adult 3XL'],designs:['Arch Logo','Home Plate Logo']},
+ {id:'tee',title:'T-Shirt',price:15,colors:['Navy','Dark Gray'],sizes:['Youth S','Youth M','Youth L','Youth XL','Adult S','Adult M','Adult L','Adult XL','Adult 2XL','Adult 3XL'],designs:['Arch Logo','Home Plate Logo']},
+ {id:'youthpants',title:'Youth Fleece Joggers',price:30,colors:['Navy'],sizes:['Youth XS','Youth S','Youth M','Youth L','Youth XL'],designs:['Vertical Fishkill Logo']},
+ {id:'adultpants',title:'Adult Fleece Joggers',price:35,colors:['Navy'],sizes:['Adult S','Adult M','Adult L','Adult XL','Adult 2XL','Adult 3XL'],designs:['Vertical Fishkill Logo']}
+];
+// Size upcharges vary by garment.
+const SIZE_SURCHARGES={hoodie:{'Adult 2XL':3,'Adult 3XL':5.50},tee:{'Adult 2XL':1.50,'Adult 3XL':3},youthpants:{},adultpants:{'Adult 2XL':3,'Adult 3XL':5.50}};
+const sizeExtra=(productId,size)=>(SIZE_SURCHARGES[productId]||{})[size]||0;
+const PERSONALIZATION_PRICE=5;
+let cart=[],selected=null;
+const $=id=>document.getElementById(id),money=n=>'$'+n.toFixed(2),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const COLOR_SWATCHES = {
+  Sand: '#d8c1a0',
+  'Carolina Blue': '#79b9f6',
+  Navy: '#162b4a',
+  'Dark Gray': '#454545'
+};
+
+function renderProducts() {
+  $('products').innerHTML = PRODUCTS.map(product => {
+    const swatches = product.colors.map(color =>
+      `<span class="swatch" style="--swatch-color: ${COLOR_SWATCHES[color]}">${esc(color)}</span>`
+    ).join('');
+    const price = money(product.price);
+    return `<article class="product">
+      <div class="product-swatch">${swatches}</div>
+      <div class="product-body">
+        <h3>${esc(product.title)}</h3>
+        <p>${price} · ${product.designs.map(esc).join(' / ')}</p>
+        <button type="button" data-product="${product.id}">Choose options</button>
+      </div>
+    </article>`;
+  }).join('');
+  document.querySelectorAll('[data-product]').forEach(button => {
+    button.addEventListener('click', () => openProduct(button.dataset.product));
+  });
+}
+
+function fill(id,arr){$(id).innerHTML=arr.map(x=>`<option value="${esc(typeof x==='string'?x:x.value)}">${esc(typeof x==='string'?x:x.label)}</option>`).join('')}
+function updateDesignPreview() {
+  if (!selected) return;
+  const color = $('color').value;
+  const design = $('design').value;
+  $('designPreview').innerHTML =
+    `<strong>${esc(color)} · ${esc(design)}</strong>` +
+    '<p>Refer to the catalog above for garment and logo placement. Mockups are illustrative.</p>';
+}
+$('color').addEventListener('change',updateDesignPreview);
+$('design').addEventListener('change',updateDesignPreview);
+function openProduct(id){selected=PRODUCTS.find(p=>p.id===id);if(!selected||selected.price===null)return;$('dialogTitle').textContent=selected.title;$('dialogPrice').textContent='Base price: '+money(selected.price)+((selected.id==='hoodie'||selected.id==='tee')?' · 2XL +'+money(sizeExtra(selected.id,'Adult 2XL'))+' · 3XL +'+money(sizeExtra(selected.id,'Adult 3XL')):'')+' · Name personalization +'+money(PERSONALIZATION_PRICE);fill('color',selected.colors);fill('design',selected.designs);updateDesignPreview();fill('size',selected.sizes.map(size=>({value:size,label:size+(sizeExtra(selected.id,size)?' (+ '+money(sizeExtra(selected.id,size))+')':'')})));$('qty').value=1;$('personalize').checked=false;$('backName').value='';updateLinePrice();$('modal').classList.add('open');$('color').focus();}
+function updateLinePrice(){if(!selected)return;$('personalizationFields').classList.toggle('hide',!$('personalize').checked);let qty=Number($('qty').value)||1;let unit=selected.price+sizeExtra(selected.id,$('size').value)+($('personalize').checked?PERSONALIZATION_PRICE:0);$('linePrice').textContent='Size upcharge: +'+money(sizeExtra(selected.id,$('size').value))+' each · This line: '+money(qty*unit);}
+['size','qty','personalize'].forEach(id=>$(id).addEventListener('change',updateLinePrice));
+function closeModal(){$('modal').classList.remove('open')}$('closeBtn').onclick=closeModal;$('cancelBtn').onclick=closeModal;$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeModal()});
+$('addBtn').onclick=()=>{let qty=Number($('qty').value);if(!Number.isInteger(qty)||qty<1||qty>100)return alert('Enter a quantity from 1 to 100.');let personalized=$('personalize').checked;let backName=$('backName').value.trim();if(personalized&&!backName)return alert('Enter the name for personalization.');if(backName.length>12)return alert('Names must be 12 characters or fewer.');if (sums().count + qty > 300) return alert('Maximum 300 items per order.');cart.push({product:selected.title,productId:selected.id,color:$('color').value,design:$('design').value,size:$('size').value,qty,backName:personalized?backName:'',unitPrice:selected.price+sizeExtra(selected.id,$('size').value),personalizationPrice:personalized?PERSONALIZATION_PRICE:0});closeModal();renderCart();};
+function sums(){return cart.reduce((a,l)=>{a.subtotal+=(l.unitPrice-sizeExtra(l.productId,l.size))*l.qty;a.sizeExtras+=sizeExtra(l.productId,l.size)*l.qty;a.personalization+=l.personalizationPrice*l.qty;a.count+=l.qty;return a},{subtotal:0,sizeExtras:0,personalization:0,count:0})}
+function renderCart(){let s=sums();$('count').textContent=s.count+' item'+(s.count===1?'':'s');$('lines').className=cart.length?'':'empty';$('lines').innerHTML=cart.length?cart.map((l,i)=>`<div class="line"><div class="line-top"><strong>${esc(l.product)} × ${l.qty}</strong><button class="danger remove" data-remove="${i}">Remove</button></div><p>${esc(l.color)} · ${esc(l.size)} · ${esc(l.design)}${l.backName?' · Back name: '+esc(l.backName):''}</p><strong>${money(l.qty*(l.unitPrice+l.personalizationPrice))}</strong></div>`).join(''):'No items added yet.';document.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{cart.splice(Number(b.dataset.remove),1);renderCart()});$('subtotal').textContent=money(s.subtotal);$('sizeExtras').textContent=money(s.sizeExtras);$('personalization').textContent=money(s.personalization);$('total').textContent=money(s.subtotal+s.sizeExtras+s.personalization);}
+function order(){let s=sums();return {organization:'Fishkill Little League',createdAt:new Date().toISOString(),customer:{name:$('name').value.trim(),email:$('email').value.trim(),phone:$('phone').value.trim(),team:$('team').value.trim(),notes:$('notes').value.trim()},items:cart.map(x=>({...x,lineTotal:(x.unitPrice+x.personalizationPrice)*x.qty})),subtotal:s.subtotal,sizeExtras:s.sizeExtras,personalization:s.personalization,total:s.subtotal+s.sizeExtras+s.personalization,payment:'In person: cash only',delivery:'Local pickup only; no shipping'};}
+function validate(){
+ if(!cart.length){alert('Please add at least one item.');return false;}
+ const checks=[
+  ['name',v=>/^[\p{L}][\p{L}\p{M} .'-]{1,99}$/u.test(v),'Enter your full name (2–100 characters).'],
+  ['email',v=>v.length<=254 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v),'Enter a valid email address.'],
+  ['phone',v=>{const d=v.replace(/\D/g,'');return d.length===10||(d.length===11&&d[0]==='1');},'Enter a valid 10-digit US phone number.']
+ ];
+ for(const [id,test,msg] of checks){const el=$(id),v=el.value.trim();el.setCustomValidity(test(v)?'':msg);if(!el.reportValidity()){el.focus();return false;}}
+ if($('team').value.length>100){alert('Team or division must be 100 characters or fewer.');$('team').focus();return false;}
+ if($('notes').value.length>1000){alert('Notes must be 1,000 characters or fewer.');$('notes').focus();return false;}
+ if(!$('agree').checked){alert('Please confirm the payment and pickup terms.');$('agree').focus();return false;}
+ return true;
+}
+['name','email','phone'].forEach(id=>$(id).addEventListener('input',()=>$(id).setCustomValidity('')));
+function receipt(o){return `FISHKILL LITTLE LEAGUE — SPIRIT WEAR ORDER\nDate: ${new Date(o.createdAt).toLocaleString()}\nName: ${o.customer.name}\nEmail: ${o.customer.email}\nPhone: ${o.customer.phone}\nTeam: ${o.customer.team||'—'}\n\n${o.items.map((l,i)=>`${i+1}. ${l.product} · ${l.color} · ${l.size} · ${l.design}\n   Quantity: ${l.qty}${l.backName?' · Back name: '+l.backName:''}\n   Line total: ${money(l.lineTotal)}`).join('\n')}\n\nApparel: ${money(o.subtotal)}\nSize upcharges: ${money(o.sizeExtras)}\nPersonalization: ${money(o.personalization)}\nTOTAL DUE: ${money(o.total)}\n\nPayment: Cash only\nPickup only; no shipping\nNotes: ${o.customer.notes||'—'}`}
+// Replace this URL with the deployed Cloudflare Worker URL (no trailing slash).
+const ORDER_API_URL = 'https://fishkill-spiritwear-api.amanda-jamin.workers.dev';
+let submissionPending = false;
+let pendingOrder = null;
+$('submitBtn').onclick = async () => {
+ if (submissionPending || !validate()) return;
+ if (ORDER_API_URL.includes('REPLACE-ME')) {
+   $('submitStatus').textContent = 'Store is not yet configured. Please contact the league.';
+   return;
+ }
+ // Retain the same request ID if an uncertain submission needs to be retried.
+ if (!pendingOrder) pendingOrder = { ...order(), requestId: crypto.randomUUID() };
+ const button = $('submitBtn');
+ submissionPending = true;
+ button.disabled = true;
+ button.textContent = 'Submitting…';
+ $('orderSuccess').style.display = 'none';
+ $('submitStatus').textContent = 'Saving your order. Please wait…';
+ const controller = new AbortController();
+ const timeout = setTimeout(() => controller.abort(), 45000);
+ try {
+   const response = await fetch(ORDER_API_URL + '/order', {
+     method: 'POST', headers: {'Content-Type':'application/json'},
+     body: JSON.stringify(pendingOrder), signal: controller.signal
+   });
+   const result = await response.json();
+   if (!response.ok || !result.success) throw new Error(result.error || 'No order confirmation received.');
+   $('submitStatus').textContent = 'Your order was submitted successfully.';
+   $('successId').textContent = result.orderId;
+   $('successTotal').textContent = money(Number(result.total));
+   $('successEmail').textContent = result.emailSent ? 'A confirmation email was sent to the address provided.' : 'We could not send a confirmation email. Please save your confirmation number.';
+   $('orderSuccess').style.display = 'block';
+   $('orderSuccess').focus();
+   cart = [];
+   pendingOrder = null;
+   renderCart();
+ } catch (error) {
+   $('submitStatus').textContent = 'Order not confirmed: ' + error.message + ' Do not start a new order until the league checks whether this submission was received. Retrying this button uses the same request ID.';
+   console.error('Order submission issue:', error);
+ } finally {
+   clearTimeout(timeout);
+   submissionPending = false;
+   button.disabled = false;
+   button.textContent = 'Submit order';
+ }
+};
+// If the customer edits their order after an uncertain failure, use a new request ID.
+// Do not reuse an old request ID for changed cart contents or customer details.
+function clearPendingOrder() { pendingOrder = null; }
+for (const id of ['name','email','phone','team','notes']) $(id).addEventListener('input',clearPendingOrder);
+const originalRenderCart = renderCart;
+renderCart = function() { clearPendingOrder(); originalRenderCart(); };
+
+$('copyOrderId').onclick = () => { const id=$('successId').textContent; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(id).catch(() => window.prompt('Copy confirmation number:', id)); else window.prompt('Copy confirmation number:', id); };
+renderProducts();renderCart();
+  </script>
+ </body>
+</html>
+
